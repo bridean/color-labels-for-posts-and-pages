@@ -15,7 +15,7 @@
             ];
 
             // Create a color selection interface
-            var colorPicker = $('<div class="color-picker"><div><label for="custom-color">Enter a color (e.g., #FF0000):</label><input type="text" id="custom-color" placeholder="#FF0000"></div><div class="swatches"></div></div>');
+            var colorPicker = $('<div class="color-picker"><div><label for="custom-color">Enter a color (e.g., #FF0000):</label><input type="text" id="custom-color" placeholder="#FF0000"></div><div class="swatches"></div><button class="close-picker">Close</button></div>');
 
             colors.forEach(function(color) {
                 var colorOption = $('<div class="color-option" title="' + color.name + '"></div>').css('background-color', color.value);
@@ -33,6 +33,10 @@
                     saveColorLabel(postId, color);
                     colorPicker.remove();
                 }
+            });
+
+            colorPicker.find('.close-picker').on('click', function() {
+                colorPicker.remove();
             });
 
             $('body').append(colorPicker);

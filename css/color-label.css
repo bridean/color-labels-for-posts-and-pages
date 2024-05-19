@@ -33,3 +33,17 @@
 .color-option:hover {
     border-color: #0073aa;
 }
+
+.close-picker {
+    cursor: pointer;
+    background: #0073aa;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    align-self: flex-end;
+}
+
+.close-picker:hover {
+    background: #005a8e;
+}

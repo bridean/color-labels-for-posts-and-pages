@@ -1,0 +1,35 @@
+.color-label-link {
+    cursor: pointer;
+    color: #0073aa;
+}
+
+.color-label-link:hover {
+    color: #00a0d2;
+}
+
+.color-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 10000;
+}
+
+.color-picker .swatches {
+    display: flex;
+    gap: 10px;
+}
+
+.color-option {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.color-option:hover {
+    border-color: #0073aa;
+}

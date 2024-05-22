@@ -2,7 +2,7 @@
 /*
 Plugin Name: Color Label Posts
 Description: A plugin to color-label rows for Pages and Posts in the WordPress Dashboard.
-Version: 1.1
+Version: 1.1.1
 Author: Brian Dean
 Author URI: https://brian-dean.com
 */
@@ -20,8 +20,8 @@ function add_color_label_link($actions, $post) {
 add_action('admin_enqueue_scripts', 'enqueue_color_label_scripts');
 
 function enqueue_color_label_scripts() {
-    wp_enqueue_script('color-label-script', plugin_dir_url(__FILE__) . 'js/color-label.js', array('jquery'), '1.0', true);
-    wp_enqueue_style('color-label-style', plugin_dir_url(__FILE__) . 'css/color-label.css');
+    wp_enqueue_script('color-label-script', plugin_dir_url(__FILE__) . 'js/color-labeling.js', array('jquery'), '1.0', true);
+    wp_enqueue_style('color-label-style', plugin_dir_url(__FILE__) . 'css/color-labeling.css');
 }
 
 // Handle the AJAX request to save the color label

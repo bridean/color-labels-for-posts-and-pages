@@ -19,7 +19,7 @@ This plugin allows you to tag or color-label the individual rows of Pages and Po
 
 ## Screenshots
 
-1. Screenshot of the plugin in action.
+Screenshot of the plugin in action coming soon.
 
 ## Changelog
 

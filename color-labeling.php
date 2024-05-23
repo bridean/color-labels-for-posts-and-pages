@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Color Label Posts
+Plugin Name: Color Label Posts and Pages
 Description: A plugin to color-label rows for Pages and Posts in the WordPress Dashboard.
 Version: 1.1.1
 Author: Brian Dean

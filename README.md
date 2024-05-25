@@ -47,8 +47,8 @@ Currently, the plugin does not support removing color labels. You can overwrite 
 
 ## Changelog
 
-**1.1.1**
-- Added screenshot, changed plugin name, repository name, primary file names to 'color-labeling.xxx' and updated README.
+**1.1.2**
+- Created 'reset' button, added 2 color choices/swatches. The 2 default / original background colors for these striped rows: White #ffffff and a very light grey #f6f7f7. Exactly equal to the default striped row values in WordPress site's Pages and Posts pages.
 
 ### 1.0
 - Initial release.

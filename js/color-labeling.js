@@ -17,7 +17,7 @@
             ];
 
             // Create a color selection interface
-            var colorPicker = $('<div class="color-picker"><div><label for="custom-color">Enter a color (e.g., #FF0000):</label><br /><input type="text" id="custom-color" placeholder="#FF0000"></div><div class="swatches"></div><button class="reset-color">Reset</button><button class="close-picker">Close</button></div>');
+            var colorPicker = $('<div class="color-picker"><div><label for="custom-color">Enter a color (e.g., #FF0000):</label><input type="text" id="custom-color" placeholder="#FF0000"></div><div class="swatches"></div><button class="close-picker">Close</button></div>');
 
             colors.forEach(function(color) {
                 var colorOption = $('<div class="color-option" title="' + color.name + '"></div>').css({
@@ -34,13 +34,6 @@
                     colorPicker.remove();
                 });
                 colorPicker.find('.swatches').append(colorOption);
-            });
-
-            // Add reset functionality
-            colorPicker.find('.reset-color').on('click', function() {
-                console.log("Reset button clicked for post ID:", postId);
-                resetColorLabel(postId);
-                colorPicker.remove();
             });
 
             var customColorInput = colorPicker.find('#custom-color');
@@ -104,29 +97,5 @@
         });
     }
 
-    function resetColorLabel(postId) {
-        console.log("Resetting color label for post ID:", postId);
-        var $postRow = $('tr#post-' + postId);
-        // Remove the inline style for the background color completely
-        $postRow.css('background-color', '');
-        // Remove the color label from the post meta
-        $.ajax({
-            url: ajaxurl,
-            type: 'POST',
-            data: {
-                action: 'save_color_label',
-                post_id: postId,
-                color: ''
-            },
-            success: function(response) {
-                if (response.success) {
-                    console.log("Color reset for post ID:", postId);
-                    // Refresh the page to ensure the color reset is applied
-                    location.reload();
-                } else {
-                    alert('Failed to reset color label');
-                }
-            }
-        });
-    }
+    
 })(jQuery);

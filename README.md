@@ -1,6 +1,6 @@
-# Color Label Posts
+# Color Labeling Posts and Pages
 
-A WordPress plugin to color-label rows for Pages and Posts in the WordPress Dashboard.
+A WordPress plugin to color-label rows for Posts and Pages in the WordPress Dashboard.
 
 ## Description
 
@@ -39,7 +39,7 @@ You can select from predefined colors or enter a custom hexadecimal color code u
 
 **Can I remove a color label?**
 
-Currently, the plugin does not support removing color labels. You can overwrite a label with a new color.
+Yes, but just in the way of replacing a color with white or very light grey, which are default WordPress colors for these rows of pages and posts. When deactivating this plugin, all color labels done with this plugin will vanish.
 
 ## Screenshots
 
@@ -47,8 +47,10 @@ Currently, the plugin does not support removing color labels. You can overwrite 
 
 ## Changelog
 
-**1.1.2**
-- Created 'reset' button, added 2 color choices/swatches. The 2 default / original background colors for these striped rows: White #ffffff and a very light grey #f6f7f7. Exactly equal to the default striped row values in WordPress site's Pages and Posts pages.
+**1.1.3**
+- Took out faulty 'reset' button / functionality. As simple alternative solution, kept the 2 default / original background colors for these striped rows: A very light grey #f6f7f7 and white #ffffff. Exactly equal to the default striped row values in WordPress site's Pages and Posts pages. 
+
+- Much of this code is actually from 1.0 because that code worked fine in the way of keeping color labels saved in Posts and Pages pages, when navigating away and then navigating back. Somehow this stopped working properly in v 1.1.2
 
 ### 1.0
 - Initial release.

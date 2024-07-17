@@ -5,6 +5,7 @@ Description: A plugin to color-label rows for Pages and Posts in the WordPress D
 Version: 1.1.5
 Author: Brian Dean
 Author URI: https://brian-dean.com
+Author email: brian@brian-dean.com
 */
 
 // Add the 'Color Label' link to post and page row actions

@@ -9,6 +9,9 @@
  * License:         GPLv2 or later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     color-labels-for-posts-and-pages
+ * Requires at least: 4.7
+ * Requires PHP:    7.4
+ * Tested up to:    7.0
  * Copyright: (c) 2024 Brian Dean. All rights reserved.
 */
 

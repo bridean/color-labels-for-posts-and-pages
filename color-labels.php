@@ -135,5 +135,3 @@ function clpp_render_saved_row_colors() {
     }
 }
 
-
-?>

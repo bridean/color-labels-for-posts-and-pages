@@ -109,8 +109,8 @@ function clpp_save_color_label() {
     wp_send_json_error( 'Invalid color' );
 }
 
-// On initial load of the list table, output inline CSS to reflect saved colors
-add_action( 'admin_head', 'clpp_render_saved_row_colors' );
+// On initial load of the list table, append saved row colors to the enqueued stylesheet
+add_action( 'admin_enqueue_scripts', 'clpp_render_saved_row_colors', 20 );
 function clpp_render_saved_row_colors() {
     $screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
     if ( ! $screen || 'edit' !== $screen->base || empty( $screen->post_type ) || ! in_array( $screen->post_type, array( 'post', 'page' ), true ) ) {
@@ -128,13 +128,13 @@ function clpp_render_saved_row_colors() {
         if ( $color && is_string( $color ) ) {
             $san = sanitize_hex_color( $color );
             if ( $san ) {
-                $rules[] = sprintf( 'tr#post-%d{background-color:%s !important;}', (int) $p->ID, $san );
+                $rules[] = sprintf( 'tr#post-%d{background-color:%s !important;}', (int) $p->ID, esc_attr( $san ) );
             }
         }
     }
 
     if ( $rules ) {
-        echo '\n<style id="clpp-row-colors">' . implode( '', $rules ) . '</style>\n';
+        wp_add_inline_style( 'clpp-style', implode( '', $rules ) );
     }
 }
 

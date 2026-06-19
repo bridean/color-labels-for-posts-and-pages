@@ -1,0 +1,23 @@
+.color-swatch-container {
+    display: none;
+    margin-top: 10px;
+}
+
+.color-swatch {
+    width: 22px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+	border: 1px solid #666;
+	border-radius: 6px;
+}
+
+.color-swatch:hover {
+    border: 1px solid #000;
+}
+
+/* Smooth background-color transitions on post/page rows */
+.wp-list-table tr[id^="post-"] {
+    transition: background-color 0.3s ease-in-out;
+}

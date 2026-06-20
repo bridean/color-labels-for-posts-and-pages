@@ -3,7 +3,7 @@
  * Plugin Name:     Color Labels for Posts and Pages
  * Plugin URI:      https://github.com/bridean/color-labels-for-posts-and-pages
  * Description:     Color-label rows in the WP Dashboard.
- * Version:         1.1.7
+ * Version:         1.2.0
  * Author:          Brian Dean
  * Author URI:      https://brian-dean.com
  * License:         GPLv2 or later
@@ -18,6 +18,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
+
+define( 'CLPP_VERSION', '1.2.0' );
 
 // Enqueue assets only on the posts/pages list screens
 add_action( 'admin_enqueue_scripts', 'clpp_enqueue_assets' );
@@ -46,13 +48,13 @@ function clpp_enqueue_assets( $hook_suffix ) {
         'clpp-style',
         plugin_dir_url( __FILE__ ) . 'css/color-labels.css',
         array(),
-        '1.1.7'
+        CLPP_VERSION
     );
     wp_enqueue_script(
         'clpp-script',
         plugin_dir_url( __FILE__ ) . 'js/color-labels.js',
         array( 'jquery' ),
-        '1.1.7',
+        CLPP_VERSION,
         true
     );
 }

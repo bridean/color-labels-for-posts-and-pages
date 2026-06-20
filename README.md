@@ -45,6 +45,10 @@ Yes, in the way of replacing a color with white or very light grey, which are de
 
 ## Changelog
 
+### 1.2.0
+- Fixed stray pipe separator appearing after "Color Label" row action link.
+- Fixed row color not updating immediately after picking a new color without a page reload.
+
 ### 1.1.7
 - Fixed duplicate script/style enqueue causing palette to instantly close.
 - Scoped asset loading to Posts/Pages list screens only.
@@ -71,7 +75,7 @@ This plugin is licensed under the GPLv2 or later.
 
 ## Stable Tag
 
-1.1.7
+1.2.0
 
 ## Donations
 

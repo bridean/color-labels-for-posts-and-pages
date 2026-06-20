@@ -4,7 +4,7 @@ Tags: color, labels, posts, pages, dashboard
 Requires at least: 4.7
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.1.7
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,10 @@ Yes, in the way of replacing a color with white or very light grey, which are de
 1. assets/screenshot.jpg
 
 == Changelog ==
+
+= 1.2.0 =
+* Fixed stray pipe separator appearing after "Color Label" row action link.
+* Fixed row color not updating immediately after picking a new color without a page reload.
 
 = 1.1.7 =
 * Fixed duplicate script/style enqueue causing palette to instantly close.

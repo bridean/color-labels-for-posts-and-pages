@@ -64,17 +64,17 @@ add_filter('page_row_actions', 'clpp_add_color_label_link', 10, 2);
 
 function clpp_add_color_label_link($actions, $post) {
     $nonce = wp_create_nonce('clpp_color_label_nonce');
-    $actions['color_label'] = '<a href="#" class="color-label-link" data-post-id="' . esc_attr($post->ID) . '" data-nonce="' . esc_attr($nonce) . '">Color Label</a>';
-    $actions['color_swatch'] = '<div class="color-swatch-container" id="color-swatch-' . esc_attr($post->ID) . '">
-                                    <div class="color-swatch" data-color="#FFCDD2" style="background-color: #FFCDD2;"></div>
-                                    <div class="color-swatch" data-color="#FFE0B2" style="background-color: #FFE0B2;"></div>
-                                    <div class="color-swatch" data-color="#FFF9C4" style="background-color: #FFF9C4;"></div>
-                                    <div class="color-swatch" data-color="#C8E6C9" style="background-color: #C8E6C9;"></div>
-                                    <div class="color-swatch" data-color="#BBDEFB" style="background-color: #BBDEFB;"></div>
-                                    <div class="color-swatch" data-color="#E1BEE7" style="background-color: #E1BEE7;"></div>
-                                    <div class="color-swatch" data-color="#f6f7f7" style="background-color: #f6f7f7;"></div>
-                                    <div class="color-swatch" data-color="#ffffff" style="background-color: #ffffff;"></div>
-                                </div>';
+    $actions['color_label'] = '<a href="#" class="color-label-link" data-post-id="' . esc_attr($post->ID) . '" data-nonce="' . esc_attr($nonce) . '">Color Label</a>'
+        . '<div class="color-swatch-container" id="color-swatch-' . esc_attr($post->ID) . '">'
+        . '<div class="color-swatch" data-color="#FFCDD2" style="background-color: #FFCDD2;"></div>'
+        . '<div class="color-swatch" data-color="#FFE0B2" style="background-color: #FFE0B2;"></div>'
+        . '<div class="color-swatch" data-color="#FFF9C4" style="background-color: #FFF9C4;"></div>'
+        . '<div class="color-swatch" data-color="#C8E6C9" style="background-color: #C8E6C9;"></div>'
+        . '<div class="color-swatch" data-color="#BBDEFB" style="background-color: #BBDEFB;"></div>'
+        . '<div class="color-swatch" data-color="#E1BEE7" style="background-color: #E1BEE7;"></div>'
+        . '<div class="color-swatch" data-color="#f6f7f7" style="background-color: #f6f7f7;"></div>'
+        . '<div class="color-swatch" data-color="#ffffff" style="background-color: #ffffff;"></div>'
+        . '</div>';
     return $actions;
 }
 

@@ -59,11 +59,11 @@ function clpp_enqueue_assets( $hook_suffix ) {
 
 
 // Add the 'Color Label' link to post and page row actions
-add_filter('post_row_actions', 'add_color_label_link', 10, 2);
-add_filter('page_row_actions', 'add_color_label_link', 10, 2);
+add_filter('post_row_actions', 'clpp_add_color_label_link', 10, 2);
+add_filter('page_row_actions', 'clpp_add_color_label_link', 10, 2);
 
-function add_color_label_link($actions, $post) {
-    $nonce = wp_create_nonce('color_label_nonce');
+function clpp_add_color_label_link($actions, $post) {
+    $nonce = wp_create_nonce('clpp_color_label_nonce');
     $actions['color_label'] = '<a href="#" class="color-label-link" data-post-id="' . esc_attr($post->ID) . '" data-nonce="' . esc_attr($nonce) . '">Color Label</a>';
     $actions['color_swatch'] = '<div class="color-swatch-container" id="color-swatch-' . esc_attr($post->ID) . '">
                                     <div class="color-swatch" data-color="#FFCDD2" style="background-color: #FFCDD2;"></div>
@@ -81,14 +81,14 @@ function add_color_label_link($actions, $post) {
 // Remove duplicate global enqueues; assets are loaded conditionally above.
 
 // Handle the AJAX request to save the color label
-add_action( 'wp_ajax_save_color_label', 'clpp_save_color_label' );
+add_action( 'wp_ajax_clpp_save_color_label', 'clpp_save_color_label' );
 
 function clpp_save_color_label() {
     // Nonce and capability checks
     $raw_nonce = isset( $_POST['nonce'] ) ? wp_unslash( $_POST['nonce'] ) : '';
     $nonce     = sanitize_text_field( $raw_nonce );
 
-    if ( ! wp_verify_nonce( $nonce, 'color_label_nonce' ) ) {
+    if ( ! wp_verify_nonce( $nonce, 'clpp_color_label_nonce' ) ) {
         wp_send_json_error( 'Invalid nonce' );
     }
 
@@ -102,7 +102,7 @@ function clpp_save_color_label() {
     $color     = sanitize_hex_color( $raw_color );
 
     if ( $color ) {
-        update_post_meta( $post_id, '_color_label', $color );
+        update_post_meta( $post_id, '_clpp_color_label', $color );
         wp_send_json_success();
     }
 
@@ -124,7 +124,7 @@ function clpp_render_saved_row_colors() {
 
     $rules = array();
     foreach ( (array) $wp_query->posts as $p ) {
-        $color = get_post_meta( $p->ID, '_color_label', true );
+        $color = get_post_meta( $p->ID, '_clpp_color_label', true );
         if ( $color && is_string( $color ) ) {
             $san = sanitize_hex_color( $color );
             if ( $san ) {

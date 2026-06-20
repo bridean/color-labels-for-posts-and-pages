@@ -46,7 +46,7 @@ jQuery(function($) {
             url: ajaxurl,
             type: 'POST',
             data: {
-                action: 'save_color_label',
+                action: 'clpp_save_color_label',
                 post_id: post_id,
                 color: color,
                 nonce: nonce

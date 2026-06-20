@@ -53,7 +53,8 @@ jQuery(function($) {
             },
             success: function(response) {
                 if (response && response.success) {
-                    $('tr#post-' + post_id).css('background-color', color);
+                    var row = document.getElementById('post-' + post_id);
+                    if (row) { row.style.setProperty('background-color', color, 'important'); }
                 } else {
                     alert('Failed to save color label.');
                 }

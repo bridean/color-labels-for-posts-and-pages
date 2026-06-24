@@ -30,12 +30,12 @@ This plugin allows you to tag or color-label the individual rows of Pages and Po
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Navigate to the "Posts" or "Pages" sections in the WordPress Dashboard.
 4. Hover over a post or page title and click the "Color-Label" link.
-5. Use the color picker interface to select a predefined color or enter a custom color.
+5. Use the color picker interface to select a predefined color.
 
 == Usage ==
 
 - Hover over a post/page title and click the "Color Label" link.
-- Select a color from the predefined options or enter a custom color code.
+- Select a color from the predefined options.
 
 == Frequently Asked Questions ==
 
@@ -45,7 +45,7 @@ By clicking the 'color label' link in each post / page menu item (within menu th
 
 = Can I remove a color label? =
 
-Yes, in the way of replacing a color with white or very light grey, which are default WordPress colors for these rows of pages and posts. When deactivating this plugin, all color labels done with this plugin will vanish.
+Yes, in the way of replacing a color with white or very light grey, which are default WordPress colors for these rows of pages and posts. When deactivating this plugin, all color labels done with this plugin will be hidden but preserved, and revived upon reactivating.
 
 == Screenshots ==
 
